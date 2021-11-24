@@ -1,0 +1,1 @@
+INDEX VERSION 1.130+E:\Area de Trabalho\Alura\05 Java Polimorfismo - Entenda herança e interfaces\.metadata\.plugins\org.eclipse.jdt.core

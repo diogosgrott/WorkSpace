@@ -1,0 +1,12 @@
+
+public class ControleDeBonificacao {
+	
+	private double soma;
+	
+	public void registra(Gerente g){
+		double boni = g.getBonificacao();
+		soma = this.soma + boni;
+	}
+	
+
+}

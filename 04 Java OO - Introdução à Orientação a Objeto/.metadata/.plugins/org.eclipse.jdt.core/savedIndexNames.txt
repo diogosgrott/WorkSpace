@@ -1,0 +1,4 @@
+INDEX VERSION 1.130+E:\Area de Trabalho\Alura\04 Java OO - Introdução à Orientação a Objeto\.metadata\.plugins\org.eclipse.jdt.core
+2702459774.index
+2174185088.index
+2258321661.index

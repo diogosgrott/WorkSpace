@@ -1,0 +1,11 @@
+//Gerente também é Funcionário, herda atributos e métodos de Funcionário
+public class Gerente extends Funcionario {
+
+
+
+	
+	public double getBonificacao() {
+		System.out.println("Chamando método de bonificação do Gerente");
+		return super.getSalario();
+	}
+}

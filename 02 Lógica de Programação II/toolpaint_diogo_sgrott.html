@@ -1,0 +1,122 @@
+<meta charset="UTF-8">
+
+<canvas width="600" height="400"></canvas>
+
+<script>
+
+    function desenhaQuadrado(x, y, tamanho, cor) {
+        pincel.fillStyle = cor;
+        pincel.fillRect(x, y, tamanho, tamanho)
+        pincel.fill();
+    }
+
+    function desenhaCirculo(x, y, raio, cor) {
+        pincel.fillStyle = cor;
+        pincel.beginPath();
+        pincel.arc(x, y, raio, 0, 2 * Math.PI);
+        pincel.fill();
+    }
+
+    function desenhaPaletaDeCores() {
+        for (var posicao = 0;posicao<paletaCores.length;posicao++){
+            pincel.fillStroke = "black";
+            pincel.strokeRect(xCores,yQuadrados,tamanhoQuadrados,tamanhoQuadrados);
+            desenhaQuadrado(xCores,yQuadrados,tamanhoQuadrados,paletaCores[posicao]);
+            xCores = xCores+50;
+        }
+        desenhaTexto("LIMPE", 558,15);
+        desenhaTexto("A", 570,30);
+        desenhaTexto("TELA",560,45);
+    }
+
+    function lidaComMovimentoDoMouse(evento) {
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+
+        if (y<=55){
+
+        }else{
+            if(desenha) {
+                desenhaCirculo(x, y, 5, corAtual);
+            }
+        }
+    }
+
+    function desenhaTexto(texto,xTexto, yTexto){
+        pincel.font = "12px Arial";
+        pincel.fillStyle = "black";
+        pincel.fillText(texto,xTexto, yTexto)
+    }
+
+    function habilitaDesenhar() {
+        desenha = true;
+    }
+
+    function desabilitaDesenhar() {
+        desenha = false;
+    }
+
+    function limpaTela(){
+        pincel.clearRect(0, 50, 600, 350);
+    }
+
+    function trocaCor(evento){
+        var x = evento.pageX - tela.offsetLeft;
+        var y = evento.pageY - tela.offsetTop;
+
+        if (y<tamanhoQuadrados){
+            if(x<50){
+                corAtual = "red";
+            }else if(x>50 && x<100){
+                corAtual = "green";
+            }else if(x>100 && x<150){
+                corAtual = "blue"
+            }else if(x>150 && x<200){
+                corAtual = "yellow"
+            }else if(x>200 && x<250){
+                corAtual = "purple"
+            }else if(x>250 && x<300){
+                corAtual = "black"
+            }else if(x>300 && x<350){
+                corAtual = "magenta"
+            }else if(x>350 && x<400){
+                corAtual = "white"
+            }else if(x>400 && x<450){
+                corAtual = "brown"
+            }else if(x>450 && x<500){
+                corAtual = "orange"
+            }else if(x>500 && x<550){
+                corAtual = "darkblue"
+            }else if(x>550){
+                limpaTela()
+                pincel.fillStyle = 'lightgray';
+                pincel.fillRect(0, 50, 600, 350);;
+            }
+        }
+    }
+
+
+
+    var tela = document.querySelector('canvas');
+    var pincel = tela.getContext('2d');
+    pincel.fillStyle = 'lightgray';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var desenha = false;
+    var corAtual = 'blue';
+    var paletaCores = ["red","green", "blue", "yellow", "purple", "black", "magenta", "white", 'brown', 'orange', 'darkblue','white']
+    var xCores = 0;
+    var yQuadrados = 0;
+    var tamanhoQuadrados = 50;
+
+    desenhaPaletaDeCores(); // mostra os quadrados de seleção de cores
+
+    tela.onmousemove = lidaComMovimentoDoMouse;
+
+    tela.onmousedown = habilitaDesenhar;
+
+    tela.onmouseup = desabilitaDesenhar;
+
+    tela.onclick = trocaCor;
+
+</script>

@@ -1,0 +1,26 @@
+//Gerente também é Funcionário Autenticavel, e então um Funcionario, herda atributos e métodos de Funcionário
+//Gerente tbm tem que ser Autenticavel
+public class Gerente extends Funcionario implements Autenticavel {
+
+	private int senha;
+
+	public double getBonificacao() {
+		System.out.println("Chamando método de bonificação do Gerente");
+		return super.getSalario();
+	}
+
+	@Override
+	public boolean autentica(int senha) {
+		if (this.senha == senha) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	@Override
+	public void setSenha(int senha) {
+		this.senha = senha;
+
+	}
+}

@@ -1,0 +1,2 @@
+INDEX VERSION 1.130+E:\Area de Trabalho\Alura\03 Java JRE e JDK Escreva o seu primeiro código com Eclipse\.metadata\.plugins\org.eclipse.jdt.core
+4242768837.index

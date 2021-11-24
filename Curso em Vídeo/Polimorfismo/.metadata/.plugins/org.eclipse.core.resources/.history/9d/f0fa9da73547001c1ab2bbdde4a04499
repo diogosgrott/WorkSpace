@@ -1,0 +1,13 @@
+
+public class Canguru extends Mamifero {
+	
+	@Override
+	public void locomover() {
+		System.out.println("O mamífero se locomove correndo");
+	}
+
+	public void usarBolsa(){
+		System.out.println("Usa bolsa");
+	}
+
+}

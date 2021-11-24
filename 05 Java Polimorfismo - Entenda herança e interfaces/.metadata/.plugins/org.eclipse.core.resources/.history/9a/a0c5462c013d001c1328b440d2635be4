@@ -1,0 +1,12 @@
+
+public class Teste {
+	public static void main(String[] args) {
+		FuncionarioTeste teste = new FuncionarioTeste();
+		
+		teste.setSalario(3000);
+		System.out.println(teste.getTipo());
+		System.out.println(teste.getBonificacao());
+		
+	}
+
+}
